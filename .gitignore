@@ -38,5 +38,6 @@ config.json
 ehthumbs.db
 Thumbs.db
 
+node_modules
 
 Bot/config.json
