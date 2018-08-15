@@ -16,28 +16,58 @@ body {
 
 a {
     color: seashell;
+    text-decoration: none;
+}
+
+img.round{
+    border-radius: 50%;
+}
+
+header{
+    width: 100%; 
+    img{
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
 }
 
 nav {
+    z-index: 1;
+    position: sticky;
+    top:0;
     width: 100%;
+    background-color: rgb(58, 58, 58);
+    padding: 5px;
+    box-sizing: border-box;
     ul {
         width: 100%;
+        // min-height: 50px;
         display: flex;
         justify-content: space-around;
-        flex-basis: 19%;
+        align-items: center;
         flex-direction: row;
+        flex-wrap: wrap;
         li {
-            padding: 10px;
             border-right: seashell 1px solid;
             border-left: seashell 1px solid;
+            width: 18%;
+            min-width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             a {
+                box-sizing: border-box;
+                padding: 10px;
+                text-align: center; 
                 width: 100%;
                 height: 100%;
-                text-decoration: none;
-                margin: auto;
             }
             &:hover{
-                background-color: rgba(255,255,255,0.1);
+                background-color: rgba(255,0,0,0.2);
             }
         }
     }
