@@ -8,6 +8,7 @@ client.login(config.token);
 client.commands = new Map();
 client.events = new Map();
 client.config = config;
+client.queues = [];
 
 fs.readdir("./events/", (err, files) => {
     if (err) throw err;

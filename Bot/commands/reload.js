@@ -14,3 +14,15 @@ exports.run = (client, message, args) => {
     
     message.reply(`The command ${commandName} has been reloaded`);
 };
+
+exports.requirements = [
+    "arg1"
+];
+
+exports.aliases = [
+    
+];
+
+exports.permissions = [
+    
+];

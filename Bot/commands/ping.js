@@ -9,3 +9,6 @@ exports.requirements = [
 exports.permissions = [
     "KICK_MEMBERS"
 ]
+exports.aliases = [
+    
+]
