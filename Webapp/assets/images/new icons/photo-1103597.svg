@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="800" version="1.1" viewBox="0 0 800.00001 800.00001" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="c" x1="373.16" x2="-89.395" y1="442.37" y2="861.02" gradientUnits="userSpaceOnUse">
+   <stop offset="0"/>
+   <stop stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <mask id="b" maskUnits="userSpaceOnUse">
+   <circle cx="400" cy="400" r="400" color="#000000" color-rendering="auto" fill="#fff" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  </mask>
+  <mask id="a" maskUnits="userSpaceOnUse">
+   <circle cx="400" cy="400" r="400" color="#000000" color-rendering="auto" fill="#fff" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  </mask>
+ </defs>
+ <circle cx="400" cy="400" r="400" color="#000000" color-rendering="auto" fill="#1c8adb" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+ <path d="m208.75 200.15-208.7 208.7c-1.0455 246.41 115.6 388.64 390.12 391.1l200.09-200.09v-399.71z" color="#000000" color-rendering="auto" fill="url(#c)" image-rendering="auto" mask="url(#a)" opacity=".42" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+ <path d="m208.75 200.15v399.71h381.51v-399.71h-381.51zm35.924 37.639h309.66v285.47h-309.66v-285.47zm157.87 36.227a56.668 56.668 0 0 0 -56.668 56.668 56.668 56.668 0 0 0 56.668 56.669 56.668 56.668 0 0 0 56.668 -56.669 56.668 56.668 0 0 0 -56.668 -56.668zm50.884 112.19a75.389 75.389 0 0 1 -50.884 19.869 75.389 75.389 0 0 1 -50.82 -19.829 96.134 102.21 0 0 0 -45.317 86.611 96.134 102.21 0 0 0 0.0673 1.5174h192.15a96.134 102.21 0 0 0 0.0683 -1.5174 96.134 102.21 0 0 0 -45.252 -86.651h-0.0166z" color="#000000" color-rendering="auto" fill="#fff" image-rendering="auto" mask="url(#b)" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+</svg>

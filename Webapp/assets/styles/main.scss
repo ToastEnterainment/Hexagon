@@ -9,8 +9,9 @@ $wys3:10vw;
 $wys1-min:50px;
 $wys2-min:60px;
 $wys3-min:80px;
-$background-color:lighten(#000000, 10);
+$background-color:linear-gradient(110deg, rgb(20, 0, 0), rgb(70, 0, 0), rgb(32, 0, 0), rgb(0, 0, 0));
 $accent-color: #b71c1c;
+$hexagons: url("/Project/Webapp/assets/images/customSVG/hexagons.svg") fixed;
 // content:
 * {
     margin: 0;
@@ -22,8 +23,10 @@ ol {
     list-style: none;
 }
 
+// html {//     background-color: $background-color;
+// }
 body {
-    background-color: lighten(#000000, 10);
+    background: $background-color;
     color: seashell;
     font-family: $font2;
 }
@@ -38,6 +41,7 @@ img.round {
 }
 
 // clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+// #region header
 header {
     width: 100%;
     position: fixed;
@@ -172,7 +176,8 @@ header {
     }
 }
 
-// #region
+// #endregion
+// #region old header
 // header {
 //     font-family: $font1;
 //     width: 100%;
@@ -240,22 +245,43 @@ header {
 //     }
 // }
 // #endregion
+// HEXAGON PATH:
+// clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
 main {
+    background: $hexagons;
     box-sizing: border-box;
-    margin-top: $wys3;
     width: 100%;
     padding: 5px 8%;
+    padding-top: $wys3;
     .element {
-        background-color: rgba(255, 255, 255, 0.1);
-        margin: 4px;
-        height: 500px;
+        background-color: rgba(0, 0, 0, 0.2);
+        box-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
+        margin: 10px;
+        margin-bottom: 20px;
+        padding: 120px 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        div {
+            margin: auto, 10px;
+            max-width: 900px;
+        }
+        h1 {
+            font-size: 3em;
+            min-width: 20%;
+            margin-bottom: 12px;
+        }
         img {
-            float: left;
             margin: 7px;
         }
         &:nth-child(even) {
+            h1 {
+                order: 1;
+            }
             img {
-                float: right;
+                order: 2;
             }
         }
     }

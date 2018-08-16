@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="800" version="1.1" viewBox="0 0 800.00001 800.00001" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="c" x1="344.47" x2="-82.755" y1="447.12" y2="883.37" gradientUnits="userSpaceOnUse">
+   <stop offset="0"/>
+   <stop stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <mask id="b" maskUnits="userSpaceOnUse">
+   <circle cx="400" cy="400" r="400" color="#000000" color-rendering="auto" fill="#fff" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  </mask>
+  <mask id="a" maskUnits="userSpaceOnUse">
+   <circle cx="400" cy="400" r="400" color="#000000" color-rendering="auto" fill="#fff" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  </mask>
+ </defs>
+ <circle cx="400" cy="400" r="400" color="#000000" color-rendering="auto" fill="#1c8adb" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+ <path d="m209.79 203.74-209.7 209.7c9.8161 329.49 188.56 380.39 389.43 386.49l203.67-203.67v-329.08l-64.271-63.432z" color="#000000" color-rendering="auto" fill="url(#c)" image-rendering="auto" mask="url(#a)" opacity=".42" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+ <path d="m209.79 203.74v392.52h383.4v-329.08l-64.271-63.432h-319.12zm95.393 27.795l192.61 0.06641v118.73h-192.61v-118.79zm125.78 22.477v73.842h42.525v-73.797l-42.525-0.04492zm-167.76 159.36l276.56 0.08985v150.59h-276.56v-150.68zm27.967 25.305v18.045h220.64v-18.033l-220.64-0.01172zm0 40.711v18.045h220.64v-18.035l-220.64-0.00976zm0 43.141v18.045h220.64v-18.035l-220.64-0.00977z" color="#000000" color-rendering="auto" fill="#fff" image-rendering="auto" mask="url(#b)" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+</svg>
