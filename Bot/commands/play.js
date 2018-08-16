@@ -29,7 +29,7 @@ exports.run = (client, message, args) => {
             embed.addField("Title", results[0].title, true);
             embed.addField("Description", results[0].description, true);
             embed.addField("Channel", results[0].channelTitle, true);
-            embed.setFooter("Requested by " + message.author.username);
+            embed.setFooter("Requested by " + message.author.username, message.author.avatarURL);
             embed.setThumbnail(results[0].thumbnails.default.url);
     
             message.channel.send(embed);

@@ -1,11 +1,11 @@
 exports.run = (client, message, args) => {
-    if (message.member.voiceChannel) {            
+    if (message.member.voiceChannel) {
         let queue = client.queues[message.guild.id];
 
         if (!queue) {
-            message.channel.send("There's any queue for this server");
+            message.channel.send("There's no queue for this server");
             return;
-        }        
+        }
 
         queue = [];
         message.reply("queue cleared");
@@ -16,11 +16,11 @@ exports.run = (client, message, args) => {
 }
 
 exports.requirements = [
-    
+
 ];
 
 exports.permissions = [
-    
+
 ];
 
 exports.aliases = [

@@ -1,5 +1,5 @@
 exports.run = (client, message, args) => {
-    if (message.member.voiceChannel) {            
+    if (message.member.voiceChannel) {
         message.member.voiceChannel.leave();
     } else {
         message.reply("You must join voice channel to use this command");
@@ -8,11 +8,11 @@ exports.run = (client, message, args) => {
 }
 
 exports.requirements = [
-    
+    //in chanel
 ];
 
 exports.permissions = [
-    
+
 ];
 
 exports.aliases = [

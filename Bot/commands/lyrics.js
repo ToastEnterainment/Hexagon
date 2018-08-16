@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
 
             const embed2 = new Discord.RichEmbed();
             embed2.setDescription(str2);
-            embed2.setFooter("Requested by " + message.author.username);
+            embed2.setFooter("Requested by " + message.author.username, message.author.avatarURL);
 
             message.channel.send(embed);
             message.channel.send(embed2);
@@ -25,7 +25,7 @@ exports.run = (client, message, args) => {
             const embed = new Discord.RichEmbed();
             embed.setTitle("Lyrics for " + args.join(" "));
             embed.setDescription(res);
-            embed.setFooter("Requested by " + message.author.username);
+            embed.setFooter("Requested by " + message.author.username, message.author.avatarURL);
 
             message.channel.send(embed);
         }
