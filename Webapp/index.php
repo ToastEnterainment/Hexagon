@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="/Project/Webapp/assets/images/favicon.png">
-    <title>Music Bot - prawdopodobnie najlepszy bot muzyczny na Discordzie(tm)</title>
+    <title>Hexagon - prawdopodobnie najlepszy bot muzyczny na Discordzie(tm)</title>
 
 
 
@@ -39,21 +39,21 @@
 
                     </div>
                 </a>
-                <a href="#">
+                <a href="/Project/Webapp/commands.html">
                     <div>
                         <span>
                             <i class="material-icons">list</i> Commands</span>
 
                     </div>
                 </a>
-                <a href="#">
+                <a href="/Project/Webapp/settings.html">
                     <div>
                         <span>
                             <i class="material-icons">settings</i> Settings</span>
 
                     </div>
                 </a>
-                <a href="#">
+                <a href="/Project/Webapp/info.html">
                     <div>
                         <span>
                             <i class="material-icons">info</i> Info</span>

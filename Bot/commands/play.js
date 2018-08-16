@@ -3,7 +3,7 @@ const search = require("youtube-search");
 const Discord = require("discord.js");
 
 exports.run = (client, message, args) => {
-    if (message.member.voiceChannel) {            
+    if (message.member.voiceChannel) {
         let queue = client.queues[message.guild.id];
 
         if (!queue) {
@@ -12,12 +12,12 @@ exports.run = (client, message, args) => {
         }
 
         search(args.join(" "), { maxResults: 1, key: client.config.youtubeKey }, (err, results) => {
-            if(err) throw err;
+            if (err) throw err;
             if (!results[0]) {
                 message.channel.send("There's problem with your query, try again");
                 return;
             }
-               
+
             queue.push({
                 "url": results[0].link,
                 "requested": message.author.username,
@@ -25,13 +25,13 @@ exports.run = (client, message, args) => {
             });
 
             const embed = new Discord.RichEmbed();
-            embed.setTitle("Added to queue!");
-            embed.addField("Title", results[0].title, true);
-            embed.addField("Description", results[0].description, true);
-            embed.addField("Channel", results[0].channelTitle, true);
-            embed.setFooter("Requested by " + message.author.username, message.author.avatarURL);
-            embed.setThumbnail(results[0].thumbnails.default.url);
-    
+            embed.setTitle("Added to queue!")
+                .addField("Title", results[0].title, true)
+                .addField("Description", results[0].description, true)
+                .addField("Channel", results[0].channelTitle, true)
+                .setFooter("Requested by " + message.author.username, message.author.avatarURL)
+                .setThumbnail(results[0].thumbnails.default.url);
+
             message.channel.send(embed);
         });
 
@@ -52,14 +52,14 @@ exports.run = (client, message, args) => {
 }
 
 const play = (connection, queue) => {
-    const stream = ytdl(queue[0].url, { filter : 'audioonly' });
+    const stream = ytdl(queue[0].url, { filter: 'audioonly' });
     const dispatcher = connection.playStream(stream, { seek: 0, volume: 1 });
-            
+
     dispatcher.on("end", () => {
         queue.shift();
         if (!queue[0]) {
             connection.disconnect();
-            return;    
+            return;
         }
 
         play(connection, queue);
@@ -71,7 +71,7 @@ exports.requirements = [
 ];
 
 exports.permissions = [
-    
+
 ];
 
 exports.aliases = [

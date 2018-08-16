@@ -39,8 +39,8 @@ img.round {
 img.logo:not(.round) {
   -webkit-clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
           clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
-  height: 86.60254px;
-  width: 100px;
+  height: 181.86533px;
+  width: 210px;
 }
 
 header {

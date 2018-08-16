@@ -71,7 +71,7 @@ img.round {
 
 img.logo:not(.round) {
     clip-path: $hexagon-clip-path;
-    $width: 100px;
+    $width: 210px;
     height: ($width* sqrt(3) /2);
     width: $width;
 }
