@@ -12,7 +12,15 @@ $wys3-min:80px;
 $background-color:linear-gradient(110deg, rgb(20, 0, 0), rgb(70, 0, 0), rgb(32, 0, 0), rgb(0, 0, 0));
 $accent-color: #b71c1c;
 $hexagons: url("/Project/Webapp/assets/images/customSVG/hexagons.svg") fixed;
-// content:
+$hexagon-clip-path:polygon(75% 0,
+100% 50%,
+75% 100%,
+25% 100%,
+0 50%,
+25% 0); // content:
+// 
+// 
+// 
 * {
     margin: 0;
     padding: 0;
@@ -23,8 +31,19 @@ ol {
     list-style: none;
 }
 
-// html {//     background-color: $background-color;
-// }
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: rgb(70, 0, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: lighten(rgb(70, 0, 0), 8);
+    border-radius: 9px;
+}
+
 body {
     background: $background-color;
     color: seashell;
@@ -38,6 +57,23 @@ a {
 
 img.round {
     border-radius: 50%;
+}
+
+@function sqrt($r) {
+    $x0: 1;
+    $x1: $x0;
+    @for $i from 1 through 10 {
+        $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+        $x0: $x1;
+    }
+    @return $x1;
+}
+
+img.logo:not(.round) {
+    clip-path: $hexagon-clip-path;
+    $width: 100px;
+    height: ($width* sqrt(3) /2);
+    width: $width;
 }
 
 // clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
@@ -55,7 +91,7 @@ header {
         pointer-events: visible;
         ul {
             width: 100%;
-            li {
+            a {
                 background-color: silver;
                 width: 23%;
                 height: $wys2;
@@ -73,15 +109,20 @@ header {
                     top: 0;
                     left: 3%;
                     clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
-                    a {
+                    span {
                         font-family: $font1;
-                        font-size: 2em;
+                        font-size: 1.8em;
                         box-sizing: border-box;
                         position: absolute;
-                        padding: 12px;
+                        width: fit-content;
                         top: 50%;
                         left: 50%;
                         transform: translate(-50%, -50%);
+                        i {
+                            font-size: 1.2em !important;
+                            position: relative;
+                            transform: translateY(18%);
+                        }
                     }
                 }
                 &:nth-child(1) {
@@ -174,9 +215,7 @@ header {
             background-color: #b71c1c;
         }
     }
-}
-
-// #endregion
+} // #endregion
 // #region old header
 // header {
 //     font-family: $font1;
@@ -251,8 +290,20 @@ main {
     background: $hexagons;
     box-sizing: border-box;
     width: 100%;
-    padding: 5px 8%;
+    padding: 5px 10%;
     padding-top: $wys3;
+    .intro {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px;
+        margin-bottom: 20px;
+        padding: 120px 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+        box-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
+        border-radius: 30px;
+    }
     .element {
         background-color: rgba(0, 0, 0, 0.2);
         box-shadow: rgba(0, 0, 0, 0.5) 0 0 15px;
@@ -264,6 +315,7 @@ main {
         flex-wrap: nowrap;
         align-items: center;
         justify-content: space-between;
+        border-radius: 30px;
         div {
             margin: auto, 10px;
             max-width: 900px;
