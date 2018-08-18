@@ -1,3 +1,5 @@
+const Discord = require("discord.js");
+
 exports.run = (client, message, args) => {
     let dispatcher;
     try {
@@ -9,8 +11,10 @@ exports.run = (client, message, args) => {
     const queue = client.queues[message.guild.id];
 
     if (!queue) {
-        message.channel.send("There's any queue for this server");
-        return;
+        const embed = new Discord.RichEmbed();
+        embed.setDescription(client.messages.get("noQueue"));
+        embed.setColor('#'+(Math.random()*0xFFFFFF<<0).toString(16));
+        message.channel.send(embed);
     }
 
 	if (!args[0]) args[0] = 1;

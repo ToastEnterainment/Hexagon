@@ -1,31 +1,26 @@
+const ytdl = require('ytdl-core');
+const search = require("youtube-search");
 const Discord = require("discord.js");
 
 exports.run = (client, message, args) => {
-    if (message.member.voiceChannel) {        
-        let queue = client.queues[message.guild.id];
+    if (message.member.voiceChannel) {
+        const isQL = client.qloops.get(message.guild.id);
 
-        if (!queue) {
+        if (!isQL || isQL == "false") {
+            client.qloops.set(message.guild.id, "true");
+
             const embed = new Discord.RichEmbed();
-            embed.setDescription(client.messages.get("noQueue"));
+            embed.setDescription(client.messages.get("queueLoopOn"));
             embed.setColor('#'+(Math.random()*0xFFFFFF<<0).toString(16));
             message.channel.send(embed);
-            return;
-        }        
-        
-        if (args[0] === "0" || args[1] === "0") {
+        } else {
+            client.qloops.set(message.guild.id, "false");
+
             const embed = new Discord.RichEmbed();
-            embed.setDescription(client.messages.get("useCurrentTrack"));
+            embed.setDescription(client.messages.get("queueLoopOff"));
             embed.setColor('#'+(Math.random()*0xFFFFFF<<0).toString(16));
             message.channel.send(embed);
-            return;
         }
-
-        const temp = queue[args[1]];
-        queue[args[1]] = queue[args[0]];
-        queue[args[0]] = temp;
-
-        console.log(queue);
-
     } else {
         const embed = new Discord.RichEmbed();
         embed.setDescription(client.messages.get("noVoiceChannel"));
@@ -40,9 +35,10 @@ exports.requirements = [
 ];
 
 exports.permissions = [
-    
+
 ];
 
 exports.aliases = [
-    "m"
+    "qloop",
+    "ql"
 ]

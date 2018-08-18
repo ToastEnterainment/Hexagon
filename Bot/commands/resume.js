@@ -1,14 +1,22 @@
+const Discord = require("discord.js");
+
 exports.run = (client, message, args) => {
     if (message.member.voiceChannel) {            
         const dispatcher = client.voiceConnections.find(val => val.channel.guild.id == message.guild.id).dispatcher;
 
         if (!dispatcher.paused) {
-            message.channel.send("Player is already resumed");
+            const embed = new Discord.RichEmbed();
+            embed.setDescription(client.messages.get("playerResumed"));
+            embed.setColor('#'+(Math.random()*0xFFFFFF<<0).toString(16));
+            message.channel.send(embed);
         } else {
             dispatcher.resume();
         }
     } else {
-        message.reply("You must join voice channel to use this command");
+        const embed = new Discord.RichEmbed();
+        embed.setDescription(client.messages.get("noVoiceChannel"));
+        embed.setColor('#'+(Math.random()*0xFFFFFF<<0).toString(16));
+        message.channel.send(embed);
         return;
     }
 }
