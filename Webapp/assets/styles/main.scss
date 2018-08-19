@@ -288,6 +288,7 @@ header {
 // clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
 main {
     background: $hexagons;
+    min-height: 100vh;
     box-sizing: border-box;
     width: 100%;
     padding: 5px 10%;
@@ -329,12 +330,7 @@ main {
             margin: 7px;
         }
         &:nth-child(even) {
-            h1 {
-                order: 1;
-            }
-            img {
-                order: 2;
-            }
+            flex-direction: row-reverse;
         }
     }
 }

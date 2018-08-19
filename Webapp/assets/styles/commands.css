@@ -1,0 +1,87 @@
+table.songs {
+  margin-top: 2em;
+  width: 100%;
+}
+
+table.songs tr {
+  background-color: #272727;
+}
+
+table.songs tr:nth-child(even) {
+  background-color: #1a1a1a;
+}
+
+table.songs tr:hover:not(:first-child) {
+  background-color: #010101;
+  border: 2px solid white;
+}
+
+table.songs tr td,
+table.songs tr th {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 10%;
+  padding: 0.5em 1.5em;
+  border-radius: 0.2em;
+}
+
+table.songs tr td:last-child {
+  text-align: right;
+}
+
+table.songs tr td:first-child {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
+table.songs .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+table.songs .actions > * {
+  margin: 0.1em;
+}
+
+table.songs .actions i {
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+table.songs .actions .spotifysearch {
+  width: 0;
+  height: 0;
+  padding: 0.75em;
+  background-color: greenyellow;
+  background: url(/Project/Webapp/assets/images/1024px-Spotify_logo_without_text.svg.png) no-repeat center;
+  background-size: 1.4em;
+}
+
+table.songs .actions .ytsearch {
+  width: 0;
+  height: 0;
+  padding: 0.75em;
+  background-color: darkred;
+  background: url(/Project/Webapp/assets/images/youtube-logo.png) no-repeat center;
+  background-size: 1.4em;
+}
+/*# sourceMappingURL=commands.css.map */

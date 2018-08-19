@@ -1,0 +1,75 @@
+$hexagon-clip-path:polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+//table
+table.songs {
+    margin-top: 2em; // background-color: gray; // border: 1px #000 solid;
+    width: 100%;
+    tr {
+        background-color: darken(gray, 35);
+        &:nth-child(even) {
+            background-color: darken(gray, 40);
+        }
+        &:hover:not(:first-child) {
+            background-color: darken(gray, 50);
+            border: 2px solid white;
+        }
+        td,
+        th {
+            // height: 2em;
+            box-sizing: border-box;
+            min-width: 10%;
+            padding: 0.5em 1.5em; // clip-path: $hexagon-clip-path;
+            border-radius: 0.2em; // height: 100%;
+        }
+        td:last-child {
+            text-align: right;
+        }
+        td:first-child {
+            min-width: fit-content;
+        }
+    }
+    .actions {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        flex-shrink: 0;
+        flex-grow: 0;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        &>* {
+            margin: 0.1em;
+        }
+        i {
+            font-size: 1.3em;
+            cursor: pointer;
+        }
+        .spotifysearch {
+            width: 0;
+            height: 0;
+            padding: 0.75em;
+            background-color: greenyellow;
+            background: url(/Project/Webapp/assets/images/1024px-Spotify_logo_without_text.svg.png) no-repeat center;
+            background-size: 1.4em;
+        }
+        .ytsearch {
+            width: 0;
+            height: 0;
+            padding: 0.75em;
+            background-color: darkred;
+            background: url(/Project/Webapp/assets/images/youtube-logo.png) no-repeat center;
+            background-size: 1.4em;
+        }
+    } // .spotifysearch::after,
+    // .ytsearch::after {
+    //     display: block;
+    //     content: "";
+    //     width: 1em;
+    //     height: 1em;
+    // }
+    // .spotifysearch::after {
+    //     background-color: green;
+    // }
+    // .ytsearch::after {
+    //     background-color: red;
+    // }
+}
