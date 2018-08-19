@@ -15,7 +15,22 @@ exports.run = (client, message, args) => {
 
     queueEmbed.setTitle(client.messages.get("queueTitle"));
 
-    for (let song of queue) {
+    // for (let song of queue) {
+    //     queueEmbed.addField(song.title, client.messages.get("requestedBy") + song.requested + " | " + client.messages.get("duration") + ": " + song.duration.replace("M",":").replace("PT","").replace("S",""));
+    // }
+
+    // message.channel.send(queueEmbed);
+
+    var qlength = queue.length;
+    const SONGS_PER_PAGE = 25;
+    const TOTAL_PAGES = Math.ceil(qlength / SONGS_PER_PAGE);
+    let cp = args[0] ? 0 : 0;
+    let j = 0;
+    for (let i = cp * SONGS_PER_PAGE; i < qlength; i++) {
+        if(j++ == 24)
+            break;
+        
+        const song = queue[j];
         queueEmbed.addField(song.title, client.messages.get("requestedBy") + song.requested + " | " + client.messages.get("duration") + ": " + song.duration.replace("M",":").replace("PT","").replace("S",""));
     }
 

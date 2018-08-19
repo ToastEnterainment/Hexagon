@@ -2,6 +2,7 @@ const ytdl = require('ytdl-core');
 const search = require("youtube-search");
 const Discord = require("discord.js");
 const request = require("request");
+const ypi = require('youtube-playlist-info');
 
 exports.run = (client, message, args) => {
     if (message.member.voiceChannel) {
@@ -12,7 +13,15 @@ exports.run = (client, message, args) => {
             queue = client.queues[message.guild.id];
         }
 
-        if (args.join(" ").includes("youtube") || !args.join(" ").includes("http")) {
+        if (!args[0]) {
+            message.member.voiceChannel.join().then(connection => {
+                play(connection, queue, client, message);
+            }).catch(console.error);
+            
+            return;
+        }
+
+        if ((args.join(" ").includes("youtube") || !args.join(" ").includes("http")) && !args.join(" ").includes("playlist")) {
             search(args.join(" "), { maxResults: 1, key: client.config.youtubeKey }, (err, results) => {
                 if (err) throw err;
                 if (!results[0]) {
@@ -42,6 +51,20 @@ exports.run = (client, message, args) => {
 
                 message.channel.send(embed);
             });
+        } else if (args.join(" ").includes("youtube") && args.join(" ").includes("playlist")) {
+            console.log("kjek");
+            ypi(client.config.youtubeKey, args.join(" ").replace("https://www.youtube.com/playlist?list=", "").replace("&disable_polymer=true", "")).then(songs => {
+                songs.forEach(song => {
+                    request("https://www.googleapis.com/youtube/v3/videos?id=" + song.resourceId.videoId + "&part=contentDetails&key=" + client.config.youtubeKey, (err, res) => {            
+                        queue.push({
+                            "url": "https://www.youtube.com/watch?v=" + song.resourceId.videoId,
+                            "requested": message.author.username,
+                            "title": song.title,
+                            "duration": JSON.parse(res.body).items[0].contentDetails.duration
+                        });
+                    });
+                });
+            }).catch(console.error);
         }
 
 
@@ -86,7 +109,7 @@ const play = (connection, queue, client, message) => {
 }
 
 exports.requirements = [
-    "arg1"
+    
 ];
 
 exports.permissions = [
